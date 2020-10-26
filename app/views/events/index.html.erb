@@ -1,29 +1,51 @@
 <p id="notice"><%= notice %></p>
+<div class='container'>
+  <div class='d-flex justify-content-center'>
+    <h1>Concerts</h1>
+  </div>
 
-<h1>Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Location</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class='border border-dark container'>
+    <div class='row'>
+      <div class='d-flex justify-content-center align-items-center col-3 border border-dark bg-purple'>
+        <h3 class='text-white'>Artists</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-3 border border-dark bg-purple'>
+        <h3 class='text-white'>Location</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-4 border border-dark bg-purple'>
+        <h3 class='text-white'>Description</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-dark bg-purple'>
+        <h3 class='text-white'>Do U Wanna join?</h3>
+      </div>
+    </div>
     <% @events.each do |event| %>
-      <tr>
-        <td><%= event.location %></td>
-        <td><%= event.description %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class='row border'>
+        <div class='d-flex justify-content-center align-items-center col-3 border'>
+          <h3>Anna Carina</h3>
+        </div>
+        <div class='d-flex justify-content-center align-items-center col-3 border'>
+          <p>
+            <%= event.location %>
+          </p>
+        </div>
+        <div class='d-flex justify-content-center align-items-center col-4 border'>
+          <p>
+            <%= event.description %>
+          </p>
+          <%= link_to 'Show', event %>
+          <%= link_to 'Edit', edit_event_path(event) %>
+          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <div class='d-flex justify-content-center align-items-center col-2 border'>
+          <button type="submit" class="btn btn-warning ">Attend</button>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+ 
 
-<%= link_to 'New Event', new_event_path %>
+
+  <br>
+</div>

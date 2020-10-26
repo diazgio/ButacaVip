@@ -1,27 +1,52 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-
-<h2>Your Events</h2>
-
-<% @event.each do |event| %>
-  <div>
-    <%= event.location %>
-    <%= event.description %>
+<div class='container'>
+  <div class='row bg-purple'>
+    <div class='col-4'>
+      <strong class='text-warning'>Name:</strong>
+      <p class='text-light'>
+        <%= @user.name %>
+      </p>
+    </div>
+    <div class='col-4'>
+      <strong class='text-warning'>Email:</strong>
+      <p class='text-light'>
+        <%= @user.email %>
+      </p>
+    </div>
+    <div class='col-4'>
+      <strong class='text-warning'>User settings</strong>
+      <div>
+        <p class='text-light'><%= link_to 'Edit', edit_user_path(@user), class:'text-light' %> | <%= link_to 'Back', root_path, class:'text-light'  %></p>
+      </div>
+    </div>
+    
   </div>
-<% end %>
+  <div class='row d-flex justify-content-center'>
+    <h2>Your Events</h2>
+  </div>
+  <div class='row'>
+    <div class='col-3'>
+      <h3>Artist</h3>
+    </div>
+    <div class='col-3'>
+      <h3>Location</h3>
+    </div>
+    <div class='col-4'>
+      <h3>Description</h3>
+    </div>
+    <div class='col-2'>
+      <h3>Attendance</h3>
+    </div>
+  </div>
 
-<% @user.attended_events.each do |attended| %>
-  <%= attended.name %>
-<% end %>
+  <% @event.each do |event| %>
+    <div>
+      <%= event.location %>
+      <%= event.description %>
+    </div>
+  <% end %>
+
+  <% @user.attended_events.each do |attended| %>
+    <%= attended.name %>
+  <% end %>
+</div>
