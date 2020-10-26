@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <nav>
+    <% if current_user %>
+      <%= link_to current_user.name, user_path(current_user.id), class: 'text-white' %>.
+      <%= link_to 'New Event', new_event_path,  class: 'btn btn-warning mx-3 text-dark' %>
+      <%= link_to "Log Out", logout_path, class: 'btn btn-dark' %>
+    <% else %>
+      <%= link_to "Sign Up", signup_path, class: 'btn btn-dark' %> or
+      <%= link_to "Log In", login_path, class: 'btn btn-dark' %>
+    <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
