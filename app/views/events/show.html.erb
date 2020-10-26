@@ -10,5 +10,10 @@
   <%= @event.description %>
 </p>
 
+<p>
+  <% @event.attendees.each do |attendee| %>
+    <%= attendee.name %>
+  <% end %>
+</p>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
