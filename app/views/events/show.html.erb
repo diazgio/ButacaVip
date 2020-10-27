@@ -1,19 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class='container text-center my-3'>
+  <div class='row'>
+    <div class='col-4 border rounded border-warning bg-purple'>
+      <p class='m-0 p-2 text-warning'><strong>Location:</strong></p>
+    </div>
+    <div class='col-8 border border-dark rounded'>
+      <p class='m-0 p-2'>
+        <%= @event.location %>
+      </p>
+    </div>
+  </div>
+  <div class='row mt-2'>
+    <div class='col-4 border rounded border-warning bg-purple'>
+      <p class='m-0 p-2 text-warning'><strong>Description:</strong></p>
+    </div>
+    <div class='col-8 border border-dark rounded'>
+      <p class='m-0 p-2'>
+        <%= @event.description %>
+      </p>
+    </div>
+  </div>
+  <p>
+    <% @event.attendees.each do |attendee| %>
+      <%= attendee.name %>
+    <% end %>
+  </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <% @event.attendees.each do |attendee| %>
-    <%= attendee.name %>
-  <% end %>
-</p>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+  <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-warning p-2' %> 
+  <%= link_to 'Back', events_path, class: 'btn btn-warning p-2' %>
+</div>

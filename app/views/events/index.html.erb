@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
-<div class='container'>
-  <div class='d-flex justify-content-center'>
-    <h1>Concerts</h1>
+<div class='container mt-2'>
+  <div class='d-flex justify-content-center bg-purple border border-dark'>
+    <h1 class='text-light'>Concerts</h1>
   </div>
 
   <div class='border border-dark container'>
@@ -29,13 +28,17 @@
             <%= event.location %>
           </p>
         </div>
-        <div class='d-flex justify-content-center align-items-center col-4 border'>
+        <div class='d-flex flex-column justify-content-center align-items-center col-4 border'>
           <p>
             <%= event.description %>
           </p>
-          <%= link_to 'Show', event %>
-          <%= link_to 'Edit', edit_event_path(event) %>
-          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div>
+            <p>
+            <%= link_to 'Show', event, class:'btn btn-warning p-1' %>
+            <%= link_to 'Edit', edit_event_path(event), class:'btn btn-warning p-1' %>
+            <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-warning p-1' %>
+            </p>
+          </div>
         </div>
         <div class='d-flex justify-content-center align-items-center col-2 border'>
           <button type="submit" class="btn btn-warning ">Attend</button>

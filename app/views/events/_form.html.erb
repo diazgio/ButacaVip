@@ -11,17 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+  <div class="row">
+    <div class='col-2'>
+    </div>
+    <div class='col-8'>
+      <%= form.label :location, class:'text-warning font-weight-bolder' %>
+      <%= form.text_field :location, class:'rounded p-1' %>
+    </div>
+    <div class='col-2'>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="row my-2">
+    <div class='col-2'>
+    </div>
+    <div class='col-8'>
+      <%= form.label :description, class:'text-warning font-weight-bolder' %>
+      <%= form.text_area :description, class:'rounded p-1' %>
+    </div>
+    <div class='col-2'>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="text-center">
+    <%= form.submit :Create, class:'btn btn-warning' %>
   </div>
 <% end %>

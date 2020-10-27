@@ -1,6 +1,12 @@
-<h1>Editing Event</h1>
-
-<%= render 'form', event: @event %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<div class='container d-flex justify-content-center align-items-center flex-column mt-2'>
+  <div class='bg-purple mb-2 border border-warning rounded py-3 px-5 text-center'>
+    <h1 class='text-warning'>Editing Event</h1>
+  </div>
+  <div class='border shadow-lg py-2 border border-warning rounded bg-purple'>
+    <%= render 'form', event: @event %>
+  </div>
+  <div class='mt-2'>
+    <%= link_to 'Show', @event, class:'btn btn-warning p-2' %> 
+    <%= link_to 'Back', events_path, class:'btn btn-warning p-2' %>
+  </div>
+</div>

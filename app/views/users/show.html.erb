@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
-<div class='container'>
-  <div class='row bg-purple'>
+<div class='container my-2'>
+  <div class='row bg-purple border border-warning rounded'>
     <div class='col-4'>
       <strong class='text-warning'>Name:</strong>
       <p class='text-light'>
@@ -21,28 +20,36 @@
     </div>
     
   </div>
-  <div class='row d-flex justify-content-center'>
-    <h2>Your Events</h2>
+  <div class='row d-flex justify-content-center bg-purple border border-warning rounded mt-2'>
+    <h2 class='text-warning'>Your Events</h2>
   </div>
-  <div class='row'>
-    <div class='col-3'>
-      <h3>Artist</h3>
+  <div class='row bg-purple border border-warning rounded'>
+    <div class='col-3 border-right border-warning text-center'>
+      <h3 class='text-warning'>Artist</h3>
     </div>
-    <div class='col-3'>
-      <h3>Location</h3>
+    <div class='col-3 border-right border-warning text-center'>
+      <h3 class='text-warning'>Location</h3>
     </div>
-    <div class='col-4'>
-      <h3>Description</h3>
+    <div class='col-4 border-right border-warning text-center'>
+      <h3 class='text-warning'>Description</h3>
     </div>
-    <div class='col-2'>
-      <h3>Attendance</h3>
+    <div class='col-2 text-center'>
+      <h3 class='text-warning'>Attendance</h3>
     </div>
   </div>
 
   <% @event.each do |event| %>
-    <div>
-      <%= event.location %>
-      <%= event.description %>
+    <div class='row border border-warning rounded'>
+      <div class='col-3 p-2 border-right border-warning'>
+      </div>
+      <div class='col-3 p-2 border-right border-warning'>
+        <%= event.location %>
+      </div>
+      <div class='col-4 p-2 border-right border-warning'>
+        <%= event.description %>
+      </div>
+      <div class='col-2 p-2'>
+      </div>
     </div>
   <% end %>
 
