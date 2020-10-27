@@ -19,12 +19,29 @@
       </p>
     </div>
   </div>
-  <%= link_to 'Attend', attend_path(event_id:@event.id), class:'btn btn-warning p-1'%>
-  <p>
-    <% @event.attendees.each do |attendee| %>
-      <%= attendee.name %>
-    <% end %>
-  </p>
+  <div class='row mt-2'>
+    <div class='col-4 border rounded border-warning bg-purple'>
+      <p class='m-0 p-2 text-warning'><strong>Do You wanna Join?:</strong></p>
+    </div>
+    <div class='col-8 border border-dark rounded'>
+      <p class='m-0 p-2'>
+        <%= link_to 'Attend', attend_path(event_id:@event.id), class:'btn btn-warning p-1'%>
+      </p>
+    </div>
+  </div>
+  <div class='row my-2'>
+    <div class='col-12 bg-purple p-2 text-center border border-warning rounded'>
+      <h3 class='text-warning'>Attendees!!!!!</h3>
+    </div>
+    <div class='col-12 bg-purple border border-warning rounded'>
+      <% @event.attendees.each do |attendee| %>
+        <p class='m-0 text-light attendees'>
+          <%= attendee.name %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  
 
 
   <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-warning p-2' %> 
