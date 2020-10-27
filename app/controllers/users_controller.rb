@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @event = Event.where(creator_id:@user)
+    @attendance = Attendance.where(event_id:@user)
   end
 
   # GET /users/new

@@ -10,11 +10,12 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @event = Event.find(params[:id])
   end
 
   # GET /events/new
   def new
-    @event = Event.new
+    @event = current_user.events.build
   end
 
   # GET /events/1/edit
@@ -70,6 +71,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:artist, :location, :description, :creator_id)
+      params.require(:event).permit(:artist, :location, :description, :creator_id, :event_id)
     end
 end
