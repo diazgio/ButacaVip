@@ -18,8 +18,8 @@
         <p class='text-light'><%= link_to 'Edit', edit_user_path(@user), class:'text-light' %> | <%= link_to 'Back', root_path, class:'text-light'  %></p>
       </div>
     </div>
-    
   </div>
+
   <% if events? %>
     <div class='row d-flex justify-content-center bg-purple border border-warning rounded mt-2'>
       <h2 class='text-warning'>Your Events</h2>
@@ -55,6 +55,7 @@
       </div>
     <% end %>
   <% end %>
+
   <% if events_future? %>
     <div class='row d-flex justify-content-center bg-purple border border-warning rounded mt-2'>
       <h2 class='text-warning'>Up Coming Events!!! So Exiting</h2>
@@ -66,27 +67,88 @@
       <div class='col-3 border-right border-warning text-center'>
         <h3 class='text-warning'>Location</h3>
       </div>
-      <div class='col-4 border-right border-warning text-center'>
+      <div class='col-3 border-right border-warning text-center'>
         <h3 class='text-warning'>Description</h3>
       </div>
-      <div class='col-2 text-center'>
+      <div class='col-3 text-center'>
         <h3 class='text-warning'>Date</h3>
       </div>
     </div>
     <% @future_event.each do |event| %>
       <div class='row border border-warning rounded'>
-        <div class='col-3 p-2 border-right border-warning text-center bg-light'>
+        <div class='col-3 p-2 border-right border-warning d-flex justify-content-center align-items-center bg-light'>
           <%= event.artist %>
         </div>
-        <div class='col-3 p-2 border-right border-warning text-center bg-light'>
+        <div class='col-3 p-2 border-right border-warning d-flex justify-content-center align-items-center bg-light'>
           <%= event.location %>
         </div>
-        <div class='col-3 p-2 border-right border-warning text-center bg-light'>
+        <div class='col-3 p-2 border-right border-warning d-flex justify-content-center align-items-center bg-light'>
           <%= event.description %>
         </div>
         <div class='col-3 p-2 bg-light'>
-          <%= event.start_date %>
-          <%= event.end_date %>
+          <div class='row'>
+            <div class='col-6 border-right border-warning'>
+              <p>
+                Start Date
+              </p>
+                <%= event.start_date %>
+            </div>
+            <div class='col-6'>
+              <p>
+                End Date
+              </p>
+                <%= event.end_date %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if events_past? %>
+    <div class='row d-flex justify-content-center bg-purple border border-warning rounded mt-2'>
+      <h2 class='text-warning'>Past Events!!! Do You Enjoy it?</h2>
+    </div>
+    <div class='row bg-purple border border-warning rounded'>
+      <div class='col-3 border-right border-warning text-center'>
+        <h3 class='text-warning'>Artist</h3>
+      </div>
+      <div class='col-3 border-right border-warning text-center'>
+        <h3 class='text-warning'>Location</h3>
+      </div>
+      <div class='col-3 border-right border-warning text-center'>
+        <h3 class='text-warning'>Description</h3>
+      </div>
+      <div class='col-3 text-center'>
+        <h3 class='text-warning'>Date</h3>
+      </div>
+    </div>
+    <% @past_event.each do |event| %>
+      <div class='row border border-warning rounded'>
+        <div class='col-3 p-2 border-right border-warning d-flex justify-content-center align-items-center bg-light'>
+          <%= event.artist %>
+        </div>
+        <div class='col-3 p-2 border-right border-warning d-flex justify-content-center align-items-center bg-light'>
+          <%= event.location %>
+        </div>
+        <div class='col-3 p-2 border-right border-warning d-flex justify-content-center align-items-center bg-light'>
+          <%= event.description %>
+        </div>
+        <div class='col-3 p-2 bg-light'>
+          <div class='row'>
+            <div class='col-6 border-right border-warning'>
+              <p>
+                Start Date
+              </p>
+                <%= event.start_date %>
+            </div>
+            <div class='col-6'>
+              <p>
+                End Date
+              </p>
+                <%= event.end_date %>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
