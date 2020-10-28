@@ -12,9 +12,9 @@
   <body class='back-ground'>
     <%= flash_message %>
     <nav class='navbar navbar-dark bg-purple'>
-      <div>
-        <img src="/../../../assets/images/logo1.png" alt="butacalogo">
-        <%= link_to 'Butaca Vip', root_path, class:'logo-butaca text-warning'%>
+      <div class='d-flex justify-content-between aling-items-baseline'>
+        <%= image_tag('logo1.png')%>
+        <%= link_to 'Butaca Vip', root_path, class:'logo-butaca text-warning pt-2'%>
       </div>
       <div class='d-flex justify-content-between aling-center'>
         <% if current_user %>
