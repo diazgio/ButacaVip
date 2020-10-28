@@ -20,24 +20,24 @@
     </div>
     
   </div>
-  <div class='row d-flex justify-content-center bg-purple border border-warning rounded mt-2'>
-    <h2 class='text-warning'>Your Events</h2>
-  </div>
-  <div class='row bg-purple border border-warning rounded'>
-    <div class='col-3 border-right border-warning text-center'>
-      <h3 class='text-warning'>Artist</h3>
-    </div>
-    <div class='col-3 border-right border-warning text-center'>
-      <h3 class='text-warning'>Location</h3>
-    </div>
-    <div class='col-4 border-right border-warning text-center'>
-      <h3 class='text-warning'>Description</h3>
-    </div>
-    <div class='col-2 text-center'>
-      <h3 class='text-warning'>Settings</h3>
-    </div>
-  </div>
   <% if events? %>
+    <div class='row d-flex justify-content-center bg-purple border border-warning rounded mt-2'>
+      <h2 class='text-warning'>Your Events</h2>
+    </div>
+    <div class='row bg-purple border border-warning rounded'>
+      <div class='col-3 border-right border-warning text-center'>
+        <h3 class='text-warning'>Artist</h3>
+      </div>
+      <div class='col-3 border-right border-warning text-center'>
+        <h3 class='text-warning'>Location</h3>
+      </div>
+      <div class='col-4 border-right border-warning text-center'>
+        <h3 class='text-warning'>Description</h3>
+      </div>
+      <div class='col-2 text-center'>
+        <h3 class='text-warning'>Settings</h3>
+      </div>
+    </div>
     <% @event.each do |event| %>
       <div class='row border border-warning rounded'>
         <div class='col-3 p-2 border-right border-warning text-center bg-light'>
@@ -56,11 +56,39 @@
     <% end %>
   <% end %>
   <% if events_future? %>
-    <% @future_events.each do |event| %>
-      <%= event.location %>
-      <%= event.description %>
-      <%= event.start_date %>
-      <%= event.end_date %>
+    <div class='row d-flex justify-content-center bg-purple border border-warning rounded mt-2'>
+      <h2 class='text-warning'>Up Coming Events!!! So Exiting</h2>
+    </div>
+    <div class='row bg-purple border border-warning rounded'>
+      <div class='col-3 border-right border-warning text-center'>
+        <h3 class='text-warning'>Artist</h3>
+      </div>
+      <div class='col-3 border-right border-warning text-center'>
+        <h3 class='text-warning'>Location</h3>
+      </div>
+      <div class='col-4 border-right border-warning text-center'>
+        <h3 class='text-warning'>Description</h3>
+      </div>
+      <div class='col-2 text-center'>
+        <h3 class='text-warning'>Date</h3>
+      </div>
+    </div>
+    <% @future_event.each do |event| %>
+      <div class='row border border-warning rounded'>
+        <div class='col-3 p-2 border-right border-warning text-center bg-light'>
+          <%= event.artist %>
+        </div>
+        <div class='col-3 p-2 border-right border-warning text-center bg-light'>
+          <%= event.location %>
+        </div>
+        <div class='col-3 p-2 border-right border-warning text-center bg-light'>
+          <%= event.description %>
+        </div>
+        <div class='col-3 p-2 bg-light'>
+          <%= event.start_date %>
+          <%= event.end_date %>
+        </div>
+      </div>
     <% end %>
   <% end %>
 </div>

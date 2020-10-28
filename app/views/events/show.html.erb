@@ -9,6 +9,7 @@
       </p>
     </div>
   </div>
+
   <div class='row mt-2'>
     <div class='col-4 border rounded border-warning bg-purple'>
       <p class='m-0 p-2 text-warning'><strong>Description:</strong></p>
@@ -19,6 +20,21 @@
       </p>
     </div>
   </div>
+
+  <div class='row mt-2'>
+    <div class='col-4 border rounded border-warning bg-purple '>
+      <p class='m-0 p-2 text-warning'><strong>Dates:</strong></p>
+    </div>
+    <div class='col-8 border border-dark rounded bg-light'>
+      <p class='m-0 p-2'>
+        Start Date :
+        <%= @event.start_date %> |
+        End Date: 
+        <%= @event.end_date %>
+      </p>
+    </div>
+  </div>
+
   <div class='row mt-2'>
     <div class='col-4 border rounded border-warning bg-purple'>
       <p class='m-0 p-2 text-warning'><strong>Do You wanna Join?:</strong></p>
@@ -35,6 +51,7 @@
       <% end %>
     </div>
   </div>
+
   <div class='row my-2'>
     <div class='col-12 bg-purple p-2 text-center border border-warning rounded'>
       <h3 class='text-warning'>Attendees!!!!!</h3>
