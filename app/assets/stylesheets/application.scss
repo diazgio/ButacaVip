@@ -1,5 +1,17 @@
 @import "bootstrap";
 
+.back-ground {
+  background-image: url(https://lh3.googleusercontent.com/proxy/bxealoqhLRNQIN1fqz2luBhz_R3O6hzsyk31zSUG406pz2TPGPTU1SN76r44hK3iH1_nhq8MET_Connm3ZE0nsLgH7BFLWYXYXrKwUPqG-77sRC0h5lqsoevsQ) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.title {
+  font-weight: bolder;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .bg-purple {
   background-color: #360b33;
 }

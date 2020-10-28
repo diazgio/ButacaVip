@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="m-3">
+    <%= form.label :name, class:'font-weight-bolder' %>
+    <%= form.text_field :name, class:'border rounded border-dark rounded' %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="m-3">
+    <%= form.label :email, class:'font-weight-bolder' %>
+    <%= form.text_field :email, class:'border rounded border-dark rounded' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="m-3">
+    <%= form.submit :'Create Acount', class:'btn btn-warning'%>
   </div>
 <% end %>

@@ -44,6 +44,27 @@
     </div>
   </div>
 
+  <div class="row my-2">
+    <div class='col-2'>
+    </div>
+    <div class='col-8'>
+      <%= form.label :start_date, class:'text-warning font-weight-bolder' %>
+      <%= form.date_field :start_date, class:'rounded p-1' %>
+    </div>
+    <div class='col-2'>
+    </div>
+  </div>
+  <div class="row my-2">
+    <div class='col-2'>
+    </div>
+    <div class='col-8'>
+      <%= form.label :end_date, class:'text-warning font-weight-bolder' %>
+      <%= form.date_field :end_date, class:'rounded p-1' %>
+    </div>
+    <div class='col-2'>
+    </div>
+  </div>
+
   <div class="text-center">
     <%= form.submit :Create, class:'btn btn-warning' %>
   </div>

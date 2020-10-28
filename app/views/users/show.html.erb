@@ -34,24 +34,33 @@
       <h3 class='text-warning'>Description</h3>
     </div>
     <div class='col-2 text-center'>
-      <h3 class='text-warning'>Attendance</h3>
+      <h3 class='text-warning'>Settings</h3>
     </div>
   </div>
-
-  <% @event.each do |event| %>
-    <div class='row border border-warning rounded'>
-      <div class='col-3 p-2 border-right border-warning'>
+  <% if events? %>
+    <% @event.each do |event| %>
+      <div class='row border border-warning rounded'>
+        <div class='col-3 p-2 border-right border-warning text-center bg-light'>
+          <%= event.artist %>
+        </div>
+        <div class='col-3 p-2 border-right border-warning text-center bg-light'>
+          <%= event.location %>
+        </div>
+        <div class='col-4 p-2 border-right border-warning text-center bg-light'>
+          <%= event.description %>
+        </div>
+        <div class='col-2 p-2 text-center bg-light'>
+          <%= link_to 'See it', event_path(event.id),class:'btn btn-warning p-2'%>
+        </div>
       </div>
-      <div class='col-3 p-2 border-right border-warning'>
-        <%= event.location %>
-      </div>
-      <div class='col-4 p-2 border-right border-warning'>
-        <%= event.description %>
-      </div>
-      <div class='col-2 p-2'>
-      </div>
-    </div>
+    <% end %>
   <% end %>
-
-  
+  <% if events_future? %>
+    <% @future_events.each do |event| %>
+      <%= event.location %>
+      <%= event.description %>
+      <%= event.start_date %>
+      <%= event.end_date %>
+    <% end %>
+  <% end %>
 </div>

@@ -3,7 +3,7 @@
     <div class='col-4 border rounded border-warning bg-purple'>
       <p class='m-0 p-2 text-warning'><strong>Location:</strong></p>
     </div>
-    <div class='col-8 border border-dark rounded'>
+    <div class='col-8 border border-dark rounded bg-light'>
       <p class='m-0 p-2'>
         <%= @event.location %>
       </p>
@@ -13,7 +13,7 @@
     <div class='col-4 border rounded border-warning bg-purple'>
       <p class='m-0 p-2 text-warning'><strong>Description:</strong></p>
     </div>
-    <div class='col-8 border border-dark rounded'>
+    <div class='col-8 border border-dark rounded bg-light'>
       <p class='m-0 p-2'>
         <%= @event.description %>
       </p>
@@ -23,10 +23,16 @@
     <div class='col-4 border rounded border-warning bg-purple'>
       <p class='m-0 p-2 text-warning'><strong>Do You wanna Join?:</strong></p>
     </div>
-    <div class='col-8 border border-dark rounded'>
-      <p class='m-0 p-2'>
-        <%= link_to 'Attend', attend_path(event_id:@event.id), class:'btn btn-warning p-1'%>
-      </p>
+    <div class='col-8 border border-dark rounded bg-light'>
+      <% if user_logged? && user_creator? %>
+        <p class='btn bg-purple p-2 m-2 text-light'>This is Your Event!</p>
+      <% elsif user_logged?%>
+        <p class='m-0 p-2'>
+          <%= link_to 'Attend', attend_path(event_id:@event.id), class:'btn btn-warning p-1'%>
+        </p>
+      <% else %>
+        <%= link_to 'Log In to Attend', login_path, class: 'btn btn-dark p-2'%>
+      <% end %>
     </div>
   </div>
   <div class='row my-2'>
@@ -41,9 +47,9 @@
       <% end %>
     </div>
   </div>
-  
-
-
-  <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-warning p-2' %> 
-  <%= link_to 'Back', events_path, class: 'btn btn-warning p-2' %>
+  <% if user_logged? && user_creator? %>
+    <%= link_to 'Edit', edit_event_path(@event), class:'btn btn-warning p-2'%>
+    <%= link_to 'Destroy', event_path(@event), method: :delete, class:'btn btn-warning'%>
+  <% end %>
+  <%= link_to 'Back', events_path, class: 'btn btn-dark p-2' %>
 </div>
