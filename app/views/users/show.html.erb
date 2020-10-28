@@ -15,7 +15,7 @@
     <div class='col-4'>
       <strong class='text-warning'>User settings</strong>
       <div>
-        <p class='text-light'><%= link_to 'Edit', edit_user_path(@user), class:'text-light' %> | <%= link_to 'Back', root_path, class:'text-light'  %></p>
+        <p class='text-light'><%= link_to 'Edit', edit_user_path(@user), class:'text-light' %> | <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' }, class:'text-light' %></p>
       </div>
     </div>
   </div>

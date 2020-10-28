@@ -1,9 +1,12 @@
 module EventsHelper
   def are_attendee?
     if current_user.id == @event.creator_id
-      countee = @event.attendees.each.count.positive?
-      content_tag :p, countee, :class => 'btn btn-warning p-3'
+      @event.attendees.each.count.positive?
     end
+  end
+
+  def attending?
+    
   end
 
   def user_creator?

@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"%>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,6 +16,15 @@
       <div class='d-flex justify-content-between aling-items-baseline'>
         <%= image_tag('logo1.png')%>
         <%= link_to 'Butaca Vip', root_path, class:'logo-butaca text-warning pt-2'%>
+      </div>
+      <div class='d-flex justify-content-between border-right border-left border-warning'>
+        <div class='mx-1'>
+          <span class='icon text-warning'><i class="fas fa-home" aria-hidden='true'></i></span>
+          <%= link_to 'Home', root_path, class:'logo-butaca text-warning font-weight-bolder px-2' %>
+        </div>
+        <div class='mx-1 border-left border-warning px-2'>
+          <%= link_to 'Our Butackeros', users_path, class:'logo-butaca text-warning font-weight-bolder' %>
+        </div>
       </div>
       <div class='d-flex justify-content-between aling-center'>
         <% if current_user %>

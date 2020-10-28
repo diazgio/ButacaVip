@@ -1,27 +1,43 @@
-<h1>Users</h1>
+<div class='container my-2'>
+  <div class='row bg-purple border border-warning rounded-lg'>
+    <div class='col-12 d-flex justify-content-center'>
+      <h1 class='text-warning'>¡Our Butackeros Vip!</h1>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class='row bg-purple border border-warning rounded-lg'>
+    <div class='col-4 text-center'>
+      <h3 class='text-warning'>Name</h3>
+    </div>
+    <div class='col-4 text-center'>
+      <h3 class='text-warning'>Email</h3>
+    </div>
+    <div class='col-4 text-center'>
+      <h3 class='text-warning'>Profile</h3>
+    </div>
+  </div>
+  <div class='row bg-light border border-warning rounded-lg'>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class='col-4 text-center border-bottom border-right border-warning p-2'>
+        <p class='font-weight-bolder'>
+          <%= user.name %>
+        </p>
+      </div>
+      <div class='col-4 text-center border-bottom border-right border-warning p-2'>
+        <%= user.email %>
+      </div>
+      <div class='col-4 text-center border-bottom border-warning p-2'>
+        <% if user_logged? %>
+          <%= link_to 'Show', user, class:'btn btn-warning p-2' %>
+        <% else %>
+          <%= link_to 'Log In to Visit', login_path, class: 'btn btn-dark p-2'%>
+        <% end%>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Events', root_path %>
+  </div>
+  <div class='row'>
+    <div class='col-12 text-center my-2'>
+      <%= link_to 'EVENTS', root_path, class:'btn bg-purple text-warning p-2 font-weight-bolder event' %>
+    </div>
+  </div>
+</div>
