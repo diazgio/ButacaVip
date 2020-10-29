@@ -55,8 +55,6 @@
         rails db:create
         rails db:migrate
         ```
-- before running ```rails server``` you must run a few more commands: first run ```yarn install --check-files```, ```guard init livereload```, ```rails generate simple_form:install```, 
-```rails generate devise:install``` then you can configure the Devise gem.
 - now you can run ```rails server```
 - Stop the program with: "Ctrl + C" (Windows or Linux) or "Command + C"(Apple)
 
