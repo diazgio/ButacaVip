@@ -2,10 +2,6 @@
 
 # 🧐 ButacaVip!! Private-Events project
 
-> Posts app, Ruby on Rails project
-
-![screenshot](./app/assets/images/membersonlyscreen.png)
-
 ## Concept
 
 > Build a basic events app with rails to learn the basic concepts of users creating events, attending up coming events and seeing lastes events, and for the styles was used Bootstrap, It consist of making an associations web app, log in, log out, and alse they can create, edit and destory events.
