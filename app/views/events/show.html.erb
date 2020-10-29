@@ -44,7 +44,7 @@
         <p class='btn bg-purple p-2 m-2 text-light'>This is Your Event!</p>
       <% elsif user_logged?%>
         <p class='m-0 p-2'>
-          <%= link_to 'Attend', attend_path(event_id:@event.id), class:'btn btn-warning p-1'%>
+          <%= attending? %>
         </p>
       <% else %>
         <%= link_to 'Log In to Attend', login_path, class: 'btn btn-dark p-2'%>

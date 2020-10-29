@@ -19,8 +19,10 @@
       </div>
       <div class='d-flex justify-content-between border-right border-left border-warning'>
         <div class='mx-1'>
-          <span class='icon text-warning'><i class="fas fa-home" aria-hidden='true'></i></span>
-          <%= link_to 'Home', root_path, class:'logo-butaca text-warning font-weight-bolder px-2' %>
+          <%= link_to root_path, class:'logo-butaca text-warning font-weight-bolder px-2' do %>
+            <span class='icon text-warning'><i class="fas fa-home" aria-hidden='true'></i></span>
+            Home
+          <% end %>
         </div>
         <div class='mx-1 border-left border-warning px-2'>
           <%= link_to 'Our Butackeros', users_path, class:'logo-butaca text-warning font-weight-bolder' %>
