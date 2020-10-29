@@ -1,4 +1,3 @@
-# rubocop: disable Lint/Syntax
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
@@ -22,8 +21,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /users
   # POST /users.json
@@ -74,4 +72,3 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email)
   end
 end
-# rubocop: enable Lint/Syntax
