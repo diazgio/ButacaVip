@@ -1,3 +1,4 @@
+# rubocop: disable Lint/Syntax
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
@@ -19,7 +20,8 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit, end
+  def edit
+  end
 
   # POST /events
   # POST /events.json
@@ -74,3 +76,4 @@ class EventsController < ApplicationController
     params.require(:event).permit(:artist, :location, :description, :end_date, :start_date)
   end
 end
+# rubocop: enable Lint/Syntax

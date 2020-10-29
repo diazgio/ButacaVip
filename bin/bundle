@@ -6,7 +6,7 @@
 #
 
 require 'rubygems'
-
+# rubocop: disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Style/CommentedKeyword, Style/IfUnlessModifier, Layout/LineLength
 m = Module.new do
   module_function
 
@@ -19,10 +19,10 @@ m = Module.new do
   end
 
   def cli_arg_version
-    return unless invoked_as_script? # don't want to hijack other binstubs
+    return unless invoked_as_script?
     unless 'update'.start_with?(ARGV.first || ' ')
       return
-    end # must be running `bundle update`
+    end
 
     bundler_version = nil
     update_index = nil
@@ -123,3 +123,4 @@ end
 m.load_bundler!
 
 load Gem.bin_path('bundler', 'bundle') if m.invoked_as_script?
+# rubocop: enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Style/CommentedKeyword, Style/IfUnlessModifier, Layout/LineLength
