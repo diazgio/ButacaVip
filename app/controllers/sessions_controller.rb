@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_url, notice: 'User was successfully Loged In'
     else
-      flash[:notice] = 'Invalid Login'
+      flash[:alert] = 'Invalid Login'
       redirect_to login_path
     end
   end

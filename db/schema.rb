@@ -10,37 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_004547) do
+ActiveRecord::Schema.define(version: 20_201_028_004_547) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "attendances", force: :cascade do |t|
-    t.bigint "event_id"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id"], name: "index_attendances_on_event_id"
-    t.index ["user_id"], name: "index_attendances_on_user_id"
+  create_table 'attendances', force: :cascade do |t|
+    t.bigint 'event_id'
+    t.bigint 'user_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['event_id'], name: 'index_attendances_on_event_id'
+    t.index ['user_id'], name: 'index_attendances_on_user_id'
   end
 
-  create_table "events", force: :cascade do |t|
-    t.string "location"
-    t.text "description"
-    t.integer "creator_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "artist"
-    t.date "start_date"
-    t.date "end_date"
+  create_table 'events', force: :cascade do |t|
+    t.string 'location'
+    t.text 'description'
+    t.integer 'creator_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'artist'
+    t.date 'start_date'
+    t.date 'end_date'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  add_foreign_key "attendances", "events"
-  add_foreign_key "attendances", "users"
+  add_foreign_key 'attendances', 'events'
+  add_foreign_key 'attendances', 'users'
 end

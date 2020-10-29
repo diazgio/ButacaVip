@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: %i[show edit update destroy]
 
   # GET /events
   # GET /events.json
@@ -19,8 +19,7 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1/edit
-  def edit
-  end
+  def edit, end
 
   # POST /events
   # POST /events.json
@@ -58,7 +57,7 @@ class EventsController < ApplicationController
     @event = current_user.events.find(params[:id])
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to events_url, alert: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
