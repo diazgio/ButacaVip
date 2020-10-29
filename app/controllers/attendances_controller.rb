@@ -1,5 +1,4 @@
 class AttendancesController < ApplicationController
-  
   def create
     @event = Event.find(params[:event_id])
     @event.attendees << current_user
@@ -20,5 +19,4 @@ class AttendancesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 end
