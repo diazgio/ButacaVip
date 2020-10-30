@@ -1,0 +1,10 @@
+<div class='container d-flex justify-content-center align-items-center flex-column mt-2'>
+  <div class='bg-purple mb-2 border border-warning rounded py-3 px-5 text-center'>
+    <h1 class='text-warning'>New Event</h1>
+  </div>
+  <div class='border shadow-lg py-2 border border-warning rounded bg-purple'>
+    <%= render 'form', event: @event %>
+  </div>
+
+  <%= link_to 'Back', events_path, class:'btn bg-purple rounded p-1 text-warning mt-2' %>
+</div>

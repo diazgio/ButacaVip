@@ -1,0 +1,51 @@
+@import "bootstrap";
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+
+.back-ground {
+  background-image: url('concert1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.title {
+  font-weight: bolder;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bg-purple {
+  background-color: #360b33;
+}
+
+.logo-butaca {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+}
+
+.logo-butaca:hover {
+  text-decoration: none;
+}
+
+.attendees {
+  font-size: 2rem;
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.event {
+  font-size: 1.5rem;
+  border: 2px solid #ffc107;
+}
+
+.ticket {
+  border: 2px solid #ffc107;
+}
+
+.icon {
+  font-size: 2rem;
+}

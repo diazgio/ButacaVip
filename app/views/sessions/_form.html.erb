@@ -1,0 +1,30 @@
+<div class='container d-flex flex-column aling-itemx-center my-2'>
+  <div class='row'>
+    <div class='col-3'>
+    </div>
+    <div class='col-6 text-center bg-purple border border-warning rounded'>
+      <h1 class='text-warning'>Log In</h1>
+    </div>
+    <div class='col-3'>
+    </div>
+  </div>
+  <div class='row text-center'>
+    <div class='col-3'>
+    </div>
+    <div class='col-6 bg-light border rounded p-2'>
+      <%= form_tag sessions_path do %>
+        <div class='my-2'>
+          <%= label_tag :name %>
+          <%= text_field_tag :name, '', class: 'border rounded' %>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-warning p-2">Login</button>
+          <%= link_to 'Back', events_path, class: 'btn btn-dark p-2' %>
+        </div>
+      <% end %>
+    </div>
+    <div class='col-3'>
+    </div>
+  </div>
+
+</div>

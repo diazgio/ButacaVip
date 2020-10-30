@@ -1,0 +1,72 @@
+<div class='container text-center my-3'>
+  <div class='row'>
+    <div class='col-4 border rounded border-warning bg-purple'>
+      <p class='m-0 p-2 text-warning'><strong>Location:</strong></p>
+    </div>
+    <div class='col-8 border border-dark rounded bg-light'>
+      <p class='m-0 p-2'>
+        <%= @event.location %>
+      </p>
+    </div>
+  </div>
+
+  <div class='row mt-2'>
+    <div class='col-4 border rounded border-warning bg-purple'>
+      <p class='m-0 p-2 text-warning'><strong>Description:</strong></p>
+    </div>
+    <div class='col-8 border border-dark rounded bg-light'>
+      <p class='m-0 p-2'>
+        <%= @event.description %>
+      </p>
+    </div>
+  </div>
+
+  <div class='row mt-2'>
+    <div class='col-4 border rounded border-warning bg-purple '>
+      <p class='m-0 p-2 text-warning'><strong>Dates:</strong></p>
+    </div>
+    <div class='col-8 border border-dark rounded bg-light'>
+      <p class='m-0 p-2'>
+        Start Date :
+        <%= @event.start_date %> |
+        End Date: 
+        <%= @event.end_date %>
+      </p>
+    </div>
+  </div>
+
+  <div class='row mt-2'>
+    <div class='col-4 border rounded border-warning bg-purple'>
+      <p class='m-0 p-2 text-warning'><strong>Do You wanna Join?:</strong></p>
+    </div>
+    <div class='col-8 border border-dark rounded bg-light'>
+      <% if user_logged? && user_creator? %>
+        <p class='btn bg-purple p-2 m-2 text-light'>This is Your Event!</p>
+      <% elsif user_logged?%>
+        <p class='m-0 p-2'>
+          <%= attending? %>
+        </p>
+      <% else %>
+        <%= link_to 'Log In to Attend', login_path, class: 'btn btn-dark p-2'%>
+      <% end %>
+    </div>
+  </div>
+
+  <div class='row my-2'>
+    <div class='col-12 bg-purple p-2 text-center border border-warning rounded'>
+      <h3 class='text-warning'>Attendees!!!!!</h3>
+    </div>
+    <div class='col-12 bg-purple border border-warning rounded'>
+      <% @event.attendees.each do |attendee| %>
+        <p class='m-0 text-light attendees'>
+          <%= attendee.name %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  <% if user_logged? && user_creator? %>
+    <%= link_to 'Edit', edit_event_path(@event), class:'btn btn-warning p-2'%>
+    <%= link_to 'Destroy', event_path(@event), method: :delete, class:'btn btn-warning'%>
+  <% end %>
+  <%= link_to 'Back', events_path, class: 'btn btn-dark p-2' %>
+</div>

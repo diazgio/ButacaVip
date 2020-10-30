@@ -1,0 +1,71 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class='col-2'>
+    </div>
+    <div class='col-8'>
+      <%= form.label :artist, class:'text-warning font-weight-bolder' %>
+      <%= form.text_field :artist, class:'rounded p-1' %>
+    </div>
+    <div class='col-2'>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class='col-2'>
+    </div>
+    <div class='col-8'>
+      <%= form.label :location, class:'text-warning font-weight-bolder' %>
+      <%= form.text_field :location, class:'rounded p-1' %>
+    </div>
+    <div class='col-2'>
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class='col-2'>
+    </div>
+    <div class='col-8'>
+      <%= form.label :description, class:'text-warning font-weight-bolder' %>
+      <%= form.text_area :description, class:'rounded p-1' %>
+    </div>
+    <div class='col-2'>
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class='col-2'>
+    </div>
+    <div class='col-8'>
+      <%= form.label :start_date, class:'text-warning font-weight-bolder' %>
+      <%= form.date_field :start_date, class:'rounded p-1' %>
+    </div>
+    <div class='col-2'>
+    </div>
+  </div>
+  <div class="row my-2">
+    <div class='col-2'>
+    </div>
+    <div class='col-8'>
+      <%= form.label :end_date, class:'text-warning font-weight-bolder' %>
+      <%= form.date_field :end_date, class:'rounded p-1' %>
+    </div>
+    <div class='col-2'>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= form.submit :Update, class:'btn btn-warning' %>
+  </div>
+<% end %>

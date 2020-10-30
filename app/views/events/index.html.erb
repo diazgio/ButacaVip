@@ -1,0 +1,126 @@
+<div class='container mt-3'>
+  <div class='d-flex justify-content-center bg-purple ticket rounded-lg'>
+    <h1 class='text-light'>All Our EVENTS</h1>
+  </div>
+  <div class='border border-warning rounded-lg container'>
+    <div class='row'>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Artists</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Location</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-4 border border-warning bg-purple'>
+        <h3 class='text-white'>Description</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Start Date</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Do U Wanna join?</h3>
+      </div>
+    </div>
+    <% @events.each do |event| %>
+      <div class='row border border-warning rounded-lg bg-light'>
+        <div class='d-flex justify-content-center align-items-center col-2 border border-warning p-2'>
+          <%= event.artist %>
+        </div>
+        <div class='d-flex justify-content-center align-items-center col-2 border border-warning p-2'>
+          <%= event.location %>
+        </div>
+        <div class='d-flex justify-content-center align-items-center col-4 border border-warning p-2'>
+          <%= event.description %>
+        </div>
+        <div class='d-flex flex-column justify-content-center align-items-center col-2 border border-warning p-2'>
+          <%= event.start_date %>
+        </div>
+        <div class='d-flex justify-content-center align-items-center col-2 border p-2'>
+            <%= link_to 'See More', event, class:'btn btn-warning p-1' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class='d-flex justify-content-center bg-purple ticket rounded-lg mt-3'>
+    <h1 class='text-light'>Up Coming EVENTS!!! Take a look!</h1>
+  </div>
+  <div class='border border-warning rounded-lg container'>
+    <div class='row'>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Artists</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Location</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-4 border border-warning bg-purple'>
+        <h3 class='text-white'>Description</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Start Date</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Do U Wanna join?</h3>
+      </div>
+    </div>
+    <% @events.future_events.each do |event| %>
+      <div class='row border border-warning rounded-lg bg-light'>
+        <div class='d-flex justify-content-center align-items-center col-2 border border-warning p-2'>
+          <%= event.artist %>
+        </div>
+        <div class='d-flex justify-content-center align-items-center col-2 border border-warning p-2'>
+          <%= event.location %>
+        </div>
+        <div class='d-flex justify-content-center align-items-center col-4 border border-warning p-2'>
+          <%= event.description %>
+        </div>
+        <div class='d-flex flex-column justify-content-center align-items-center col-2 border border-warning p-2'>
+          <%= event.start_date %>
+        </div>
+        <div class='d-flex justify-content-center align-items-center col-2 border p-2'>
+            <%= link_to 'See More', event, class:'btn btn-warning p-1' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class='d-flex justify-content-center bg-purple ticket rounded-lg mt-3'>
+    <h1 class='text-light'>Past EVENTS!!! What a Year HA?</h1>
+  </div>
+  <div class='border border-warning rounded-lg container mb-3'>
+    <div class='row'>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Artists</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Location</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-4 border border-warning bg-purple'>
+        <h3 class='text-white'>Description</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Start Date</h3>
+      </div>
+      <div class='d-flex justify-content-center align-items-center col-2 border border-warning bg-purple'>
+        <h3 class='text-white'>Do U Wanna join?</h3>
+      </div>
+    </div>
+    <% @events.past_events.each do |event| %>
+      <div class='row border border-warning rounded-lg bg-light'>
+          <div class='d-flex justify-content-center align-items-center col-2 border border-warning p-2'>
+            <%= event.artist %>
+          </div>
+          <div class='d-flex justify-content-center align-items-center col-2 border border-warning p-2'>
+            <%= event.location %>
+          </div>
+          <div class='d-flex justify-content-center align-items-center col-4 border border-warning p-2'>
+            <%= event.description %>
+          </div>
+          <div class='d-flex flex-column justify-content-center align-items-center col-2 border border-warning p-2'>
+            <%= event.start_date %>
+          </div>
+          <div class='d-flex justify-content-center align-items-center col-2 border p-2'>
+              <%= link_to 'See More', event, class:'btn btn-warning p-1' %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

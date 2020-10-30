@@ -1,0 +1,10 @@
+<div class='container bg-purple'>
+  <div class='d-flex align-items-center flex-column m-2'>
+    <h1 class='title text-warning'>New User</h1>
+    <div class='bg-light border rounded border-warning text-center'>
+      <%= render 'form', user: @user %>
+    </div>
+
+    <%= link_to 'Back', root_path, class:'btn btn-dark m-3' %>
+  </div>
+</div>
