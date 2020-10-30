@@ -108,5 +108,4 @@ RSpec.configure do |config|
   #   DatabaseCleaner.clean
   # end
 end
-
 # rubocop: enable Style/IfUnlessModifier
